@@ -7,12 +7,12 @@ public abstract class JobFields {
     private int id;
     private static int nextId = 1;
 
-    public JobField() {
+    public JobFields() {
         id = nextId;
         nextId++;
     }
 
-    public JobField(String value) {
+    public JobFields(String value) {
         this();
         this.value = value;
     }
