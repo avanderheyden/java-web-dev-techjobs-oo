@@ -21,17 +21,14 @@ public class Job {
 
     //  and a second to initialize the other five fields.
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
-//I don't think this is right, but I'm keeping it here anyway
-    public Job(int id)
-        this();
-//    this.int=id;
-//}
+
 
 //    The second constructor should also call the first in order to initialize
 //     the 'id' field.
@@ -97,6 +94,42 @@ public class Job {
     }
 
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
+    public static String toString(Job jobInfo) {
+        int jobId = jobInfo.getId();
+        String jobName = jobInfo.getName();
+        String jobEmployer = jobInfo.getEmployer().toString();
+        String jobLocation = jobInfo.getLocation().toString();
+        String jobPositionType = jobInfo.getPositionType().toString();
+        String jobCoreCompetency = jobInfo.getCoreCompetency().toString();
+
+        if (jobName == "") {
+            jobName = "data not available";
+        }
+        if (jobEmployer == "") {
+            jobEmployer = "data not available";
+        }
+        if (jobLocation == "") {
+            jobLocation = "data not available";
+        }
+        if (jobPositionType == "") {
+            jobPositionType = "data not available";
+        }
+        if (jobCoreCompetency == "") {
+            jobCoreCompetency = "data not available";
+        }
+
+        return "\n" +
+                "id: " + jobId + "\n" +
+                " name: " + jobName + "\n" +
+                " employer: " + jobEmployer + "\n" +
+                " location: " + jobLocation + "\n" +
+                " positionType: " + jobPositionType + "\n" +
+                " coreCompetency: " + jobCoreCompetency + "\n"
+                ;
+    }
 }
+
+
+// TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+//  and id.
+
