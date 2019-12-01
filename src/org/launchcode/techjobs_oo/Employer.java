@@ -1,7 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.Objects;
-
 public class Employer {
     private int id;
     private static int nextId = 1;
@@ -39,10 +37,6 @@ It also initializes id for the object by calling the first constructor with this
         return getId() == employer.getId();
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
 
     // Getters and Setters:
 
