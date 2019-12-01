@@ -7,11 +7,18 @@ public class Employer {
     private static int nextId = 1;
     private String value;
 
+    /*
+    first constructor accepts no arguments and assigns the value of nextId to the id field.
+     Then it increments nextId.
+    */
+
     public Employer() {
         id = nextId;
         nextId++;
     }
-
+/*the second constructor assigns aValue to the value field.
+It also initializes id for the object by calling the first constructor with this();
+ */
     public Employer(String value) {
         this();
         this.value = value;
